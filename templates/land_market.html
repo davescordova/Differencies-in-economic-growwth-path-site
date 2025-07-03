@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block title %}Land Market{% endblock %}
+{% block content %}
+    <h2>New institutions: Land Market</h2>
+    <ul>
+        <li style="text-align: justify;">Projects of colonization operated under a state-oriented private colonization model, which fundamentally relied on the establishment of a Land Market to expand the agricultural frontier in the Amazon.
+            <ul>
+                <li style="text-align: justify;">Surpluses with the learning by doing brought by immigrants: increased production driven by population growth</li>
+            </ul>
+        </li>
+        <li style="text-align: justify;">The colonization projects were an expression of the existing Land Market, not the other way around.
+            <ul>
+                <li style="text-align: justify;">When this institution did not function effectively, particularly in conjunction with inadequate transportation infrastructure, colonization projects often failed to achieve their objectives, as exemplified by the Japanese colony of CAPEM.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3>Constraints</h3>
+    <ul>
+        <li style="text-align: justify;">Decrease deforestion ratio: Decreto n° 5.975/2006 and 50% reserve was adopted in 1989 due to Law n° 7.803/1989.</li>
+    </ul>
+    <div class="image-container">
+        <h4>Figure 3 - Legal Amazon in Mato Grosso with coverture of land in millions of hectares</h4>
+        <img src="{{ url_for('static', filename='images/figure_3.png') }}" alt="Figure 3 - Legal Amazon in Mato Grosso">
+        <div class="caption">
+            <p style="text-align: justify;"><b>Legend:</b></p>
+            <table style="width:100%; border-collapse: collapse;">
+                <tr>
+                    <td style="width: 30px;"><span style="display:inline-block; width:20px; height:10px; background-color:green;"></span></td>
+                    <td>Forest</td>
+                </tr>
+                <tr>
+                    <td><span style="display:inline-block; width:20px; height:10px; background-color:khaki;"></span></td>
+                    <td>Arbustive and herbace vegetation</td>
+                </tr>
+                <tr>
+                    <td><span style="display:inline-block; width:20px; height:10px; background-color:red;"></span></td>
+                    <td>Non-vegetable areas</td>
+                </tr>
+                <tr>
+                    <td><span style="display:inline-block; width:20px; height:10px; background-color:saddlebrown;"></span></td>
+                    <td>Agro and cattle</td>
+                </tr>
+                <tr>
+                    <td><span style="display:inline-block; width:20px; height:10px; background-color:blue;"></span></td>
+                    <td>Water corps</td>
+                </tr>
+            </table>
+            <p style="text-align: justify;"><i>Source: BRASIL, 2023.</i></p>
+        </div>
+    </div>
+    <ul>
+        <li style="text-align: justify;">Fiscal consolidation:
+            <ul>
+                <li style="text-align: justify;">Production and living infrastructure that frequently went unfulfilled</li>
+            </ul>
+        </li>
+        <li style="text-align: justify;">Consequently, the Land Market could not fully regulate interaction, production, and transactional costs.</li>
+        <li style="text-align: justify;">It is reasonable to expect that institutional changes did not function flawlessly.</li>
+    </ul>
+{% endblock %}

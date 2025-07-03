@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block title %}Exploratory Statistics{% endblock %}
+{% block content %}
+    <style>
+        .fullscreen-btn {
+            display: inline-block;
+            padding: 8px 12px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .fullscreen-btn:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+    <h2>Exploratory statistics of data</h2>
+    <p>The reduced variability of the data coupled with the fluctuating pattern of variation over time suggests no clear trend of increasing productivity. The rise in production is caused by an increase in the extent of Total Tillage. This is consistent with the expansion of the agricultural frontier.</p>
+
+    <h4>Graph 9 - Agricultural Production Value per Hectare</h4>
+    <div class="iframe-container">
+        <iframe src="{{ url_for('static', filename='graphs/graph_9.html') }}" title="Interactive Graph 9"></iframe>
+    </div>
+    <a href="{{ url_for('static', filename='graphs/graph_9.html') }}" target="_blank" class="fullscreen-btn">View Fullscreen</a>
+    <p class="image-caption"><i>Source: BRASIL. IPEA, 2024a, BRASIL. IBGE, 2024b and 2024c. Elaborated by the author with Python language program.</i></p>
+
+    <p>This is not the case for the production factor of people, as shown in Graph 10.</p>
+    <h4>Graph 10 - Agricultural Production Value per Worker</h4>
+    <div class="iframe-container">
+        <iframe src="{{ url_for('static', filename='graphs/graph_10.html') }}" title="Interactive Graph 10"></iframe>
+    </div>
+    <a href="{{ url_for('static', filename='graphs/graph_10.html') }}" target="_blank" class="fullscreen-btn">View Fullscreen</a>
+    <p class="image-caption"><i>Source: BRASIL. IPEA, 2024a, BRASIL. IBGE, 2024b and 2024c. Elaborated by the author with Python language program.</i></p>
+    
+    <p>Total Factor Productivity (TFP) has a path of ups and downs until 1985, but in 1995 almost all regions fell, only to recover in 2006.</p>
+    <h4>Graph 13 - TFP through the years</h4>
+    <div class="iframe-container">
+        <iframe src="{{ url_for('static', filename='graphs/graph_13.html') }}" title="Interactive Graph 13"></iframe>
+    </div>
+    <a href="{{ url_for('static', filename='graphs/graph_13.html') }}" target="_blank" class="fullscreen-btn">View Fullscreen</a>
+    <p class="image-caption"><i>Source: BRASIL. IPEA, 2024a, BRASIL. IBGE, 2024b and 2024c. Elaborated by the author with Python language program.</i></p>
+
+    <p>This points to a critical element of Brazilian rural development: structural heterogeneous development, which becomes clear when plotting the values of TFP per worker.</p>
+    <h4>Graph 15 - TFP per worker through the years</h4>
+    <div class="iframe-container">
+        <iframe src="{{ url_for('static', filename='graphs/graph_15.html') }}" title="Interactive Graph 15"></iframe>
+    </div>
+    <a href="{{ url_for('static', filename='graphs/graph_15.html') }}" target="_blank" class="fullscreen-btn">View Fullscreen</a>
+    <p class="image-caption"><i>Source: BRASIL. IPEA, 2024a, BRASIL. IBGE, 2024b and 2024c. Elaborated by the author with Python language program.</i></p>
+{% endblock %}

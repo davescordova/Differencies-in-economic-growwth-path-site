@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}Mato Grosso Production Function{% endblock %}
+{% block content %}
+    <h2>Mato Grosso Production Function Model</h2>
+    
+    <ul>
+        <li style="text-align: justify;">In Mato Grosso, its total agricultural output is derived from the combined agricultural production of its cities, as presented in Equation 4:</li>
+    </ul>
+
+    <div style="background-color:#f4f4f4; padding: 15px; margin-top: 15px; border-left: 5px solid #ccc;">
+        <h4 style="margin-top:0;">Equation 4 - Mato Grosso Production Function</h4>
+        <p>$$ Y_t = \sum_{j=1}^{j} A_{jt} K_{jt}^\alpha L_{jt}^{1-\alpha} $$</p>
+        <p><strong>Legend:</strong></p>
+        <ul style="list-style-type: none; padding-left: 10px;">
+            <li>$Y_t$: Total production</li>
+            <li>$A_t$: Labor productivity</li>
+            <li>$K_t$: Capital</li>
+            <li>$L_t$: labor</li>
+            <li>$\alpha$: coefficient</li>
+            <li>j: cities in Mato Grosso</li>
+        </ul>
+    </div>
+    
+    <ul>
+        <li style="text-align: justify;">For long run stability, the global model requires $n$ to converge to zero across all $j$ cities. Local growth within a city is driven by two main factors: populational growth ($n_j$), and the specific institutions present, ($\gamma_j$). This implies that changes in TFP can result from exogenous shocks affecting institutional changes or from shifts in the rate of populational growth. This $\gamma_j$ is the presence of the critical juncture: the institutional changes of the Land Market, or the Transports, or both, conducting to the synthesis Rural Enterprise. For this, the coefficient for each city is different, according to the presence of one or more changes.</li>
+    </ul>
+
+{% endblock %}

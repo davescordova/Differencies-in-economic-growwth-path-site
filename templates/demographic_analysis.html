@@ -1,0 +1,180 @@
+{% extends "layout.html" %}
+{% block title %}Demographic Analysis{% endblock %}
+{% block content %}
+    <h2>Demographic analysis of the behavior of the population of Mato Grosso since the 1970s</h2>
+    <p style="text-align: justify;">
+        An increase of 1% in the Working-Age Population (WAP) is associated with a 30.60% increase in Total Tillage. This indirectly leads to an estimated 26.01% increase in Production. Regions that passed through the institutional changes experience more proportional increases in their WAP. This reflects the concept of a demographic bonus, a period where a large WAP can fuel economic growth, and aligns with the second stylized fact from Jones and Romer (2010, pp. 233-237), which posits an acceleration in economic and population growth.
+    </p>
+
+    <h4>Graph 20 – WAP logarithmical fitted lines in the Immediate Regions of Mato Grosso but Cuiabá, from 1970 to the 2022 Census</h4>
+    
+    <button id="fullscreen-btn" style="margin-bottom: 10px; padding: 8px 12px; cursor: pointer;">View Fullscreen</button>
+
+    <div class="iframe-container">
+        <iframe id="graph-iframe" src="{{ url_for('static', filename='graphs/graph_20.html') }}" title="Interactive Graph 20" style="width:100%; height:800px; border:none;"></iframe>
+    </div>
+    <p><i>The interactive plot is shown at: https://davescordova.github.io/DIFERENCES-IN-ECONOMIC-GROWTH-PATH-/graph_20.html.</i></p>
+
+    <p style="text-align: justify;">
+        Sorriso has ascended remarkably, reaching the third position in the 2022 Census, having surpassed Tangará da Serra. Similarly, Água Boa demonstrates significant upward mobility, improving its rank by three regions in the 2022 Census alone. In stark contrast, regions lacking these beneficial institutional shifts show relative decline. Cáceres has been overtaken by nine regions since the 1970 Census, a similar pattern seen with Mirassol D’Oeste. Jaciara marks a significant drop from its seventh position in the 1970 Census to the lowest level in the 2022 Census. Interestingly, Juara, which was at the very last position in the 1970 Census, has managed to improve to the tenth position.
+    </p>
+
+    <h4>Table 22 - The time at which cities come to an end of the population (Modified to exclude cities due to Covid-19 imbalance)</h4>
+     <table class="table" style="width: 90%; margin-top: 10px; border-collapse: collapse; margin-left: auto; margin-right: auto;">
+        <thead style="background-color:#f2f2f2;">
+            <tr>
+                <th style="padding: 8px; border: 1px solid #ddd; text-align: center;">City</th>
+                <th style="padding: 8px; border: 1px solid #ddd; text-align: center;">Immediate Region</th>
+                <th style="padding: 8px; border: 1px solid #ddd; text-align: center;">Intermediary Region</th>
+                <th style="padding: 8px; border: 1px solid #ddd; text-align: center;">Year of perishing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Acorizal</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Cuiabá</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Cuiabá</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2109</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Alto Paraguai</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Diamantino</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Cuiabá</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2174</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Araguainha</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Rondonópolis</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Rondonópolis</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2124</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Barão de Melgaço</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Cuiabá</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Cuiabá</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2208</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Colniza</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Juína</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Sinop</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2531</td>
+            </tr>
+             <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Dom Aquino</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Jaciara</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Rondonópolis</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2097</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Figueirópolis D'Oeste</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Mirassol D'oeste</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Cáceres</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2082</td>
+            </tr>
+             <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Guiratinga</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Rondonópolis</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Rondonópolis</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2240</td>
+            </tr>
+             <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Jauru</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Mirassol D'oeste</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Cáceres</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2085</td>
+            </tr>
+             <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Luciara</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Confresa - Vila Rica</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Barra do Garças</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2067</td>
+            </tr>
+             <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Nova Brasilândia</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Cuiabá</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Cuiabá</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2058</td>
+            </tr>
+             <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Nova Canaã do Norte</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Sinop</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Sinop</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2241</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Ponte Branca</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Barra do Garças</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Barra do Garças</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2091</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Poxoréu</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Primavera do Leste</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Rondonópolis</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2177</td>
+            </tr>
+             <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Reserva do Cabaçal</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Mirassol D'oeste</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Cáceres</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2112</td>
+            </tr>
+             <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Rondolândia</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Juína</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Sinop</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2453</td>
+            </tr>
+             <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Rosário Oeste</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Cuiabá</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Cuiabá</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2324</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Terra Nova do Norte</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Sinop</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Sinop</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2065</td>
+            </tr>
+             <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Tesouro</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Rondonópolis</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Rondonópolis</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2116</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Torixoréu</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Barra do Garças</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Barra do Garças</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2100</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Vale de São Domingos</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Pontes e Lacerda - Comodoro</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Cáceres</td>
+                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2263</td>
+            </tr>
+        </tbody>
+    </table>
+
+<script>
+    // Find the button and the iframe by their IDs
+    const fullscreenButton = document.getElementById('fullscreen-btn');
+    const graphIframe = document.getElementById('graph-iframe');
+
+    // Add an event listener that runs a function when the button is clicked
+    fullscreenButton.addEventListener('click', () => {
+        // Check for the different browser versions of the requestFullscreen method
+        if (graphIframe.requestFullscreen) {
+            graphIframe.requestFullscreen();
+        } else if (graphIframe.webkitRequestFullscreen) { /* Safari */
+            graphIframe.webkitRequestFullscreen();
+        } else if (graphIframe.msRequestFullscreen) { /* IE11 */
+            graphIframe.msRequestFullscreen();
+        }
+    });
+</script>
+
+{% endblock %}

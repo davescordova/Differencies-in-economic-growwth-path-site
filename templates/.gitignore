@@ -1,0 +1,13 @@
+# Virtual environments
+venv/
+*.venv
+env/
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Static build folder (if it exists)
+build/
+docs/

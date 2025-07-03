@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Transports{% endblock %}
+{% block content %}
+    <h3>New institutions: Transports (highways)</h3>
+    <ul>
+        <li style="text-align: justify;">Highways served to provide connections between regions, allowing for the replacement of old practices with newer capitalistic ones and eroding the previous isolation that was a chronic challenge to Mato Grosso’s economy.</li>
+        <li style="text-align: justify;">The relationship between the highways and the Land Market is plotted below.</li>
+        
+            <div class="image-container">
+                <h4>Graph 7 - Projects of colonization with federal highways in Mato Grosso (highways on a 2024 basis and projects by their cities on a 2024 basis)</h4>
+                <img src="{{ url_for('static', filename='images/graph_7.png') }}" alt="Graph 7 - Projects of colonization with federal highways in Mato Grosso">
+                <div class="caption">
+                    <p style="text-align: justify;"><i>Source: DNIT (2024) and IBGE (2023). Elaborated by the author with Python language program.</i></p>
+                </div>
+            </div>
+        </li>
+        <li style="text-align: justify;">The transport infrastructure created a structure of axes and a central hub:
+            <ul>
+                <li style="text-align: justify;"><b>BR-163:</b> This highway connects to more highways than any other in Mato Grosso, forming a hub.</li>
+                <li style="text-align: justify;">Colonization projects along BR-163, as well as BR-070 and BR-158, have greater opportunities for growth.</li>
+                <li style="text-align: justify;">These improved growth chances can be reflected in the rates of economic growth.</li>
+            </ul>
+        </li>
+    </ul>
+{% endblock %}

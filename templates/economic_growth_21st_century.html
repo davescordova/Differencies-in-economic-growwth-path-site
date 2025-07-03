@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Growth in the 21st Century{% endblock %}
+{% block content %}
+    <style>
+        p, li {
+            text-align: justify;
+        }
+    </style>
+    <h2 style="text-align: center;">Economic growth in the 21st century</h2>
+    <ul>
+        <li>The economic growth trajectory observed in the 21st century shows that all regions grew; however, those that underwent institutional changes achieved higher growth levels:</li>
+    </ul>
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='images/graph_29.png') }}" alt="Graph 29 - Average economic growth in the 21st century">
+        <p class="image-caption">Graph 29 - Average economic growth in the 21st century</p>
+    </div>
+    <p class="image-caption">Source: BRASIL. IBGE, 2024a. Elaborated by the author with Python language program.</p>
+    <ul>
+        <li>The outer circles of the chart: Regions that have undergone institutional changes.</li>
+        <ul>
+            <li>Conversely, the inner circles contain regions that have not experienced such transformations.</li>
+    </ul>
+{% endblock %}

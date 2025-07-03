@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Outcomes and Discussions{% endblock %}
+{% block content %}
+    <h2>Outcomes and Discussions</h2>
+    <p>This section presents the data analysis, econometric results, and discussions regarding the demographic and economic growth in Mato Grosso.</p>
+    <h3>Subsections:</h3>
+    <ul>
+        <li><a href="{{ url_for('exploratory_statistics') }}">Exploratory statistics of data</a></li>
+        <li><a href="{{ url_for('econometric_analysis') }}">Econometric analysis of production function</a></li>
+        <li><a href="{{ url_for('demographic_analysis') }}">Demographic analysis of the population behavior</a></li>
+        <li><a href="{{ url_for('economic_growth_21st_century') }}">Economic growth in the 21st century</a></li>
+    </ul>
+{% endblock %}

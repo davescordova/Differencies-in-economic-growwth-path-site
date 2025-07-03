@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}Institutional Changes in Mato Grosso{% endblock %}
+{% block content %}
+    <h2>Institutional Changes in Mato Grosso</h2>
+    <ul>
+        <li>Government actions were essentially made by the Central Government due to the weakest state government position, from 1950 to 1964, as pointed out by Moreno (1999, p. 79).
+            <ul>
+                <li>Lose its capability to influence land affairs</li>
+                <li>Productive activities were in the Southeast portion, divided in 1977 by Complementary Law nº 31 (BRASIL, 1977).</li>
+            </ul>
+        </li>
+        <li>Bounded rationality in the New Institutional Economy:
+            <ul>
+                <li>As the fiscal consolidation during the 1980s and the extinction of Embrater, such presence of the state became more difficult in trilateral governance:</li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul>
+        <li>Larger areas received more assistance from other origins</li>
+        <li>Public one diminished</li>
+    </ul>
+
+    <div class="image-container">
+        <h4>Graph 4 - Technical Assistance: Coverture and Origin Proportions per Land Area<br>(Agriculture/Cattle Census)</h4>
+        <img src="{{ url_for('static', filename='images/graph_4.png') }}" alt="Graph 4 - Technical Assistance: Coverture and Origin Proportions per Land Area (Agriculture/Cattle Census)">
+    </div>
+    <p><i>Source: (BRASIL. IBGE. 1975, 1979, 1983, 1991, 1997, 2025a and 2025b). Elaborated by the author with Python language program with the normalization of land area and origin type.</i></p>
+
+    <ul>
+        <li>According to Science of Contract:
+            <ul>
+                <li>Opportunistic actions took place through these decays of the technical presence of the state.</li>
+                <li>Increased uncertainty, free riders took advantage, converting a larger number of producers to a smaller one, in the sense of Fiani (2013, pp. 172-174).</li>
+                <li>Therefore, through increasing the specification of the assets, in the sense of Williamson (2022), and through the increased uncertainty, the disturbances lead to property concentration and to the inclusive institutions do not reach all its extent</li>
+            </ul>
+        </li>
+        <li>Critical juncture in institutional changes:
+            <ul>
+                <li>Acemoglu and Robinson (2012, p. 106), where the Central Government strategically deployed federal legislation and agencies to sparsely populated regions, driven by concerns about territorial occupation.</li>
+                <li>For these considerations, the regions experiencing institutional changes tend to be more inclusive, as they foster land distribution through purchase.</li>
+                <li>Centralization is more sensed in regions of newer colonization due to the concerns of the Central Government, and pluralism will be present in these areas due to the Land Market. This leads to the conclusion that the decreasing uncertainty by economic rules entailed by new institutions is more present in the regions of dynamism.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>Subsections:</h3>
+    <ul>
+        <li><a href="{{ url_for('land_market') }}">New institutions: Land Market</a></li>
+        <li><a href="{{ url_for('transports') }}">New institutions: Transports (highways)</a></li>
+        <li><a href="{{ url_for('production_function_components') }}">Components of the production function</a></li>
+    </ul>
+{% endblock %}

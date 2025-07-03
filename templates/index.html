@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <style>
+        .download-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            background-color: #4CAF50; /* A nice green */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <h2>Welcome to the Research Presentation</h2>
+    <p style="text-align: justify;">This website presents the master's thesis analyzing the divergent paths of agricultural growth across municipalities in the state of Mato Grosso from the 1960s onward.
+    <p><strong>Author:</strong> Daves de Azevedo Cordova</p>
+    <p><strong>Thesis advisor:</strong> Diego Pierotti Procópio</p>
+    <p><strong>Thesis co-advisor:</strong> Alexandro Rodrigues Ribeiro</p>
+    <p><strong>Thesis co-advisor:</strong> Leonardo Flauzino de Souza</p>
+    <a href="{{ url_for('static', filename='pdf/thesis.pdf') }}" class="download-btn" download="Cordova_Daves_Thesis.pdf">Download the thesis</a>
+    <p><small>Please use the navigation menu above to explore the different sections of the study.</small></p>
+{% endblock %}
