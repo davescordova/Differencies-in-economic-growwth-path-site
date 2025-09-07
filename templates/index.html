@@ -1,33 +1,185 @@
-{% extends "layout.html" %}
-{% block title %}Home{% endblock %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daves de Azevedo Cordova - Economista</title>
+    <!-- Estilização embutida -->
     <style>
-        .download-btn {
-             display: inline-block;
-            padding: 12px 24px;
-             margin-top: 25px;
-            margin-bottom: 15px;
-             background-color: #4CAF50; /* A nice green */
-             color: white;
-             text-align: center;
-             text-decoration: none;
-             border-radius: 5px;
-             font-size: 16px;
-             font-weight: bold;
-            transition: background-color 0.3s;
-             margin-right: 10px; /* Added for spacing between buttons */
+        /* --- GLOBAL VARIABLES (CSS VARIABLES) --- */
+        :root {
+            --primary-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --serif-font: 'Source Serif Pro', 'Georgia', 'Times New Roman', Times, serif;
+            
+            --content-bg-color: #ffffff;
+            --text-color: #212529;
+            --heading-color: #002855;
+            --primary-color: #003366;
+            --accent-color: #f39c12;
+            --border-color: #dee2e6;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --table-header-bg: #f2f2f2;
         }
-         .download-btn:hover {
-             background-color: #45a049;
-         }
-     </style>
-     <h2>Welcome to the Research Presentation</h2>
-     <p style="text-align: justify;">This website presents the master's thesis analyzing the divergent paths of agricultural growth across municipalities in the state of Mato Grosso from the 1960s onward.
-    <p><strong>Author:</strong> Daves de Azevedo Cordova</p>
-     <p><strong>Thesis advisor:</strong> Diego Pierotti Procópio</p>
-     <p><strong>Thesis co-advisor:</strong> Alexandro Rodrigues Ribeiro</p>
-     <p><strong>Thesis co-advisor:</strong> Leonardo Flauzino de Souza</p>
-     <a href="{{ url_for('static', filename='pdf/thesis.pdf') }}" class="download-btn" download="Cordova_Daves_Thesis.pdf">Download the thesis</a>
-     <a href="https://github.com/davescordova/DIFERENCES-IN-ECONOMIC-GROWTH-PATH-" class="download-btn" target="_blank" rel="noopener noreferrer">Go to Github of this thesis</a>
-     <p><small>Please use the navigation menu above to explore the different sections of the study.</small></p>
-{% endblock %}
+
+        /* --- GENERAL & TYPOGRAPHY WITH BACKGROUND IMAGE --- */
+        body {
+            font-family: var(--primary-font);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+
+            /* --- BACKGROUND IMAGE APPLIED --- */
+            /* Certifique-se de que você tem um 'image.png' dentro de 'static/images/' */
+            background-image: url("{{ url_for('static', filename='images/image.png') }}");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--primary-font);
+            color: var(--heading-color);
+            font-weight: 700;
+        }
+        
+        /* --- MAIN CONTENT CONTAINER --- */
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 2.5rem;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 6px 20px var(--shadow-color);
+        }
+
+        /* --- HEADER --- */
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+        }
+        
+        /* --- ABOUT SECTION --- */
+        main h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        main p {
+            font-size: 1.1rem;
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        /* --- NAVIGATION BUTTONS --- */
+        nav {
+            text-align: center;
+            padding-top: 1.5rem;
+        }
+        
+        .nav-link {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 0.5rem;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            background-color: var(--accent-color);
+            color: var(--heading-color);
+            transform: translateY(-3px);
+        }
+
+        .dissertation-link {
+            display: block;
+            width: 80%;
+            margin: 1rem auto 0;
+            text-align: center;
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .dissertation-link:hover {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 2rem auto;
+                padding: 1.5rem;
+            }
+            .nav-link, .dissertation-link {
+                width: 90%;
+                padding: 1rem;
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
+            main h2 {
+                font-size: 1.5rem;
+            }
+            main p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Cabeçalho com o nome -->
+        <header>
+            <h1>Daves de Azevedo Cordova</h1>
+        </header>
+
+        <!-- Seção "Sobre" -->
+        <main>
+            <h2>Sobre</h2>
+            <p>
+                Com uma trajetória acadêmica e profissional multidisciplinar, sou um especialista em economia do setor público movido pelo desafio de promover a eficiência e a transparência na gestão governamental. Sou Mestre em Economia pela UFMT, com graduação em Ciências Econômicas (UFMT) e uma base humanística sólida vinda da minha primeira graduação em História (Unesp).
+            </p>
+            <p>
+                Atualmente, atuo como Auditor Público Externo no Tribunal de Contas de Mato Grosso (TCE-MT), cedido ao Tribunal Regional Eleitoral (TRE-MT). Nesta função, aplico meu conhecimento técnico em auditorias complexas e na análise de contas eleitorais, garantindo a conformidade e a correta aplicação dos recursos.
+            </p>
+            <p>
+                A análise de dados me levou a desenvolver competências avançadas em ferramentas quantitativas e econométricas, utilizando linguagens de programação como Python e Julia para modelar e interpretar cenários econômicos, com foco especial em crescimento, desenvolvimento e finanças públicas.
+            </p>
+        </main>
+
+        <!-- Navegação com os links principais -->
+        <nav>
+            <!-- Link para o Currículo Lattes -->
+            <a href="https://lattes.cnpq.br/2785354956856869" target="_blank" rel="noopener noreferrer" class="nav-link">
+                Currículo Lattes
+            </a>
+            <!-- Link para o GitHub -->
+            <a href="https://github.com/davescordova" target="_blank" rel="noopener noreferrer" class="nav-link">
+                GitHub
+            </a>
+            <!-- Link para a Dissertação -->
+            <a href="{{ url_for('dissertation') }}" class="nav-link dissertation-link">
+                Dissertação de mestrado: DIVERGENT PATHS OF AGRICULTURAL ECONOMIC GROWTH IN IMMEDIATE REGIONS OF MATO GROSSO: THE IMPACT OF INSTITUTIONAL CHANGES SINCE THE MILITARY REGIME
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+</html>

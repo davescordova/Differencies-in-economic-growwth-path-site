@@ -4,10 +4,22 @@ from flask import Flask, render_template
 # Initialize the Flask application
 app = Flask(__name__)
 
-# --- MAIN AND SECTION ROUTES ---
+# --- MAIN ROUTES ---
+
+# The root route now correctly displays your main presentation page.
 @app.route('/')
 def index():
     return render_template('index.html')
+
+# This is the entry point to the dissertation pages
+@app.route('/dissertation/')
+def dissertation():
+    # This will render the new dissertation welcome page
+    return render_template('dissertation.html')
+
+
+# --- DISSERTATION SECTION ROUTES ---
+# These routes are necessary for the navigation links inside the dissertation pages to work.
 
 @app.route('/introduction/')
 def introduction():
@@ -78,7 +90,8 @@ def final_considerations():
     return render_template('final_considerations.html')
 
 
-# This section is no longer needed for production on Render,
-# but it's good practice to keep it for local development.
+# This section is good practice to keep for local development.
 if __name__ == '__main__':
     app.run(debug=True)
+
+
