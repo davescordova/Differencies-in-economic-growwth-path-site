@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daves de Azevedo Cordova - Economista</title>
-    <!-- Estilização embutida -->
     <style>
         /* --- GLOBAL VARIABLES (CSS VARIABLES) --- */
         :root {
@@ -139,17 +138,24 @@
             }
         }
     </style>
-</head>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMDP3WK4NR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BMDP3WK4NR');
+    </script>
+    </head>
 <body>
 
     <div class="container">
 
-        <!-- Cabeçalho com o nome -->
         <header>
             <h1>Daves de Azevedo Cordova</h1>
         </header>
 
-        <!-- Seção "Sobre" -->
         <main>
             <h2>Sobre</h2>
             <p>
@@ -163,17 +169,13 @@
             </p>
         </main>
 
-        <!-- Navegação com os links principais -->
         <nav>
-            <!-- Link para o Currículo Lattes -->
             <a href="https://lattes.cnpq.br/2785354956856869" target="_blank" rel="noopener noreferrer" class="nav-link">
                 Currículo Lattes
             </a>
-            <!-- Link para o GitHub -->
             <a href="https://github.com/davescordova" target="_blank" rel="noopener noreferrer" class="nav-link">
                 GitHub
             </a>
-            <!-- Link para a Dissertação -->
             <a href="{{ url_for('dissertation') }}" class="nav-link dissertation-link">
                 Dissertação de mestrado: DIVERGENT PATHS OF AGRICULTURAL ECONOMIC GROWTH IN IMMEDIATE REGIONS OF MATO GROSSO: THE IMPACT OF INSTITUTIONAL CHANGES SINCE THE MILITARY REGIME
             </a>
