@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block title %}Published Articles{% endblock %}
+
+{% block content %}
+    <h2>Published Articles</h2>
+    <p style="text-align: justify; margin-bottom: 30px;">
+        Access the published research articles below:
+    </p>
+
+    <!-- Estilos embutidos para as caixas de resumo, keywords e citações -->
+    <style>
+        .article-card {
+            background-color: #f8f9fa;
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .article-card h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: var(--heading-color);
+        }
+        .article-card a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .article-card a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+        .article-card .abstract {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #4a5568;
+            text-align: justify;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .article-card .keywords {
+            font-size: 0.9rem;
+            color: #2c5282;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        .article-card .citation {
+            font-size: 0.85rem;
+            background-color: #e2e8f0;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 6px;
+            font-family: var(--serif-font);
+            color: #2d3748;
+            line-height: 1.4;
+            border-left: 3px solid #cbd5e0;
+        }
+    </style>
+
+    <div class="articles-container">
+        
+        <!-- Artigo 1 -->
+        <div class="article-card">
+            <h3>
+                <a href="https://doi.org/10.36956/rwae.v7i3.2783" target="_blank" rel="noopener noreferrer">
+                    Agricultural Economic Growth in Immediate Regions of Mato Grosso, Brazil: The Impact of Institutional Changes since the Military Regime
+                </a>
+            </h3>
+            <div class="abstract">
+                <strong>Abstract:</strong> This article examines the reason why growth in Mato Grosso's Immediate Regions has been diverging since the 1960s. The hypothesis is that difference came from the institutional changes, which were initiated during the Military Regime (1964–1985). This theoretical framework applies New Institutional Economics with an augmented Solow growth model, to investigate how the preexisting extractive institutions were replaced by inclusive ones, namely Land Market and Transports, to modify the path of regional development. The methodology applies an estimation by Two-Stage Least Squares (2SLS) regression and a Spatial Durbin Model (SDM) with Agricultural Census data, from 1975 to the 2006. The findings reveal a significant regional division driven by these two institutions. Regions integrated into new infrastructure hubs and marked by the effects of Land Market, such as Sorriso along BR-163 and Primavera do Leste along BR-070, exhibited increasing returns to scale and reduced transaction costs. This institutional quality led to the division, which marks the emergence of a new institution, Rural Enterprise, which is the synthesis of the previous two. Conversely, regions with former institutions, remnants of the colonial era, such as Cáceres, experienced stagnation. Therefore, the study empirically validates the Seven Theses on the Brazilian Rural World, demonstrating a structural shift from land-expansion-based growth to a model driven by technological intensification and capital accumulation in the 21st century. Ultimately, the research concludes that specific institutional reforms fostered Schumpeterian creative destruction, establishing a new, technologically intensive capitalist agriculture that defined the state’s economic trajectory.
+            </div>
+            <div class="keywords">
+                Keywords: Agricultural Production; Extractive Institutions; Inclusive Institutions; Land Market; Rural Enterprise.
+            </div>
+            <div class="citation">
+                CORDOVA, D.; PROCÓPIO, D.; RIBEIRO, A.; SOUZA, L. de; ZAVALA, A. Agricultural Economic Growth in Immediate Regions of Mato Grosso, Brazil: The Impact of Institutional Changes since the Military Regime. <strong>Research on World Agricultural Economy</strong>, [S. l.], v. 7, n. 3, p. 168–189, 2026. DOI: 10.36956/rwae.v7i3.2783. Disponível em: https://journals.nasspublishing.com/index.php/rwae/article/view/2783.
+            </div>
+        </div>
+
+        <!-- Artigo 2 -->
+        <div class="article-card">
+            <h3>
+                <a href="https://periodicoscientificos.ufmt.br/ojs/index.php/res/article/view/17832" target="_blank" rel="noopener noreferrer">
+                    Crescimento da região de colonização histórica de Mato Grosso a partir das mudanças institucionais dos anos 1960
+                </a>
+            </h3>
+            <div class="abstract">
+                <strong>Abstract:</strong> The article analyzes why agricultural production grew significantly in the New Agricultural Frontier of Mato Grosso, while the Historical Colonization Region remained stagnant. The main conclusion is that the institutional changes implemented from the 1960s onward favored the development of the New Frontier, with expansion driven by the increase in land and labor, as well as the attraction of working-age population. In contrast, the Historical Region, without significant institutional changes, did not show the same dynamism, highlighting the role of public policies in the unequal development between the two regions.
+            </div>
+            <div class="keywords">
+                Keywords: Economic growth; Institutional changes; Demographic transition.
+            </div>
+            <div class="citation">
+                RIBEIRO, A. R.; CORDOVA, D. A. Crescimento da região de colonização histórica de Mato Grosso a partir das mudanças institucionais dos anos 1960. <strong>Revista de Estudos Sociais</strong>, [S. l.], v. 26, n. 51, 2026. DOI: 10.19093/res17832. Disponível em: https://periodicoscientificos.ufmt.br/ojs/index.php/res/article/view/17832.
+            </div>
+        </div>
+
+        <!-- Artigo 3 -->
+        <div class="article-card">
+            <h3>
+                <a href="http://journals.openedition.org/espacoeconomia/32230" target="_blank" rel="noopener noreferrer">
+                    Institutions and growth in Mato Grosso: land market and transports shaping divergent paths between the North, Center-South, and Southwest
+                </a>
+            </h3>
+            <div class="abstract">
+                <strong>Abstract:</strong> This study analyzes the divergent agricultural growth trajectories across Mato Grosso's Mesoregions, demonstrating that the North's exceptional economic expansion cannot be explained by land increase alone but stems from two institutions: the Land Market and Transports. Using 2SLS regression and demographic analysis of Census data (1970-2006), the study shows that institutional changes implemented during Brazil's Military Regime (1964-1985) were fundamental drivers of this regional differentiation. The establishment of a formal land market through the 1964 Land Statute and the development of transport, particularly the BR-163 highway, reduced transaction and production costs in the North. These institutions enabled a 160.9% greater land incorporation compared to the Center-South baseline and attracted a working-age population (WAP) at double the rate of other regions. The analysis adapts Solow's neoclassical growth model to demonstrate how this institutional framework generated productivity gains through an increase in productive land per worker.
+            </div>
+            <div class="keywords">
+                Keywords: Economic growth; Institutions; Institutional changes; Mesoregions of Mato Grosso.
+            </div>
+            <div class="citation">
+                RIBEIRO, A. R.; CORDOVA, D. A. Institutions and growth in Mato Grosso: land market and transports shaping divergent paths between the North, Center-South, and Southwest. <strong>Espaço e Economia</strong>, [S. l.], n. 30, 2025. DOI: 10.4000/15il9. Disponível em: http://journals.openedition.org/espacoeconomia/32230.
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

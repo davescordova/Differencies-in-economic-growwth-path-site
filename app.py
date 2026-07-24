@@ -80,6 +80,11 @@ def demographic_analysis():
 def economic_growth_21st_century():
     return render_template('economic_growth_21st_century.html')
 
+# --- Articles ---
+@app.route('/articles')
+def articles():
+    return render_template('articles.html')
+
 # --- REFERENCES ---
 @app.route('/references/')
 def references():
@@ -93,5 +98,4 @@ def final_considerations():
 # This section is good practice to keep for local development.
 if __name__ == '__main__':
     app.run(debug=True)
-
 

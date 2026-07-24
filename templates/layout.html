@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,6 +43,11 @@
         <a href="{{ url_for('outcomes_and_discussions') }}">Outcomes & Discussions</a>
         <a href="{{ url_for('final_considerations') }}">Final Considerations</a>
         <a href="{{ url_for('references') }}">References</a>
+        
+        <!-- Conditional Published Articles Link -->
+        {% if request.endpoint in ['index', 'dissertation'] %}
+            <a href="{{ url_for('articles') }}">Published Articles</a>
+        {% endif %}
     </nav>
 
     <!-- Main Content Area -->
@@ -54,7 +59,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025. Website generated from the thesis <i>DIVERGENT PATHS OF AGRICULTURAL ECONOMIC GROWTH IN IMMEDIATE REGIONS OF MATO GROSSO.</i></p>
+        <p>&copy; 2026. Website generated from the thesis <i>DIVERGENT PATHS OF AGRICULTURAL ECONOMIC GROWTH IN IMMEDIATE REGIONS OF MATO GROSSO.</i></p>
     </footer>
 
 </body>

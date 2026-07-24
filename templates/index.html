@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daves de Azevedo Cordova - Economista</title>
+    <title>Daves de Azevedo Cordova - Economist</title>
     <style>
         /* --- GLOBAL VARIABLES (CSS VARIABLES) --- */
         :root {
@@ -29,7 +29,6 @@
             color: var(--text-color);
 
             /* --- BACKGROUND IMAGE APPLIED --- */
-            /* Certifique-se de que você tem um 'image.png' dentro de 'static/images/' */
             background-image: url("{{ url_for('static', filename='images/image.png') }}");
             background-size: cover;
             background-position: center center;
@@ -147,7 +146,7 @@
 
       gtag('config', 'G-BMDP3WK4NR');
     </script>
-    </head>
+</head>
 <body>
 
     <div class="container">
@@ -157,29 +156,51 @@
         </header>
 
         <main>
-            <h2>Sobre</h2>
+            <h2>About</h2>
             <p>
-                Com uma trajetória acadêmica e profissional multidisciplinar, sou um especialista em economia do setor público movido pelo desafio de promover a eficiência e a transparência na gestão governamental. Sou Mestre em Economia pela UFMT, com graduação em Ciências Econômicas (UFMT) e uma base humanística sólida vinda da minha primeira graduação em História (Unesp).
+                With a multidisciplinary academic and professional background, I am a public sector economics specialist driven by the challenge of promoting efficiency and transparency in public governance. I hold a Master's degree in Economics from UFMT, a Bachelor's degree in Economic Sciences (UFMT), and a solid humanistic foundation from my first Bachelor's degree in History (Unesp).
             </p>
             <p>
-                Atualmente, atuo como Auditor Público Externo no Tribunal de Contas de Mato Grosso (TCE-MT), cedido ao Tribunal Regional Eleitoral (TRE-MT). Nesta função, aplico meu conhecimento técnico em auditorias complexas e na análise de contas eleitorais, garantindo a conformidade e a correta aplicação dos recursos.
+                Currently, I work as an External Public Auditor at the Court of Accounts of Mato Grosso (TCE-MT), on temporary assignment to the Regional Electoral Court (TRE-MT). In this role, I apply my technical expertise to complex audits and electoral account analyses, ensuring compliance and the proper allocation of public resources.
             </p>
             <p>
-                A análise de dados me levou a desenvolver competências avançadas em ferramentas quantitativas e econométricas, utilizando linguagens de programação como Python e Julia para modelar e interpretar cenários econômicos, com foco especial em crescimento, desenvolvimento e finanças públicas.
+                Data analysis led me to develop advanced skills in quantitative and econometric tools, utilizing programming languages such as Python and Julia to model and interpret economic scenarios, with a special focus on economic growth, development, and public finance.
             </p>
         </main>
 
         <nav>
             <a href="https://lattes.cnpq.br/2785354956856869" target="_blank" rel="noopener noreferrer" class="nav-link">
-                Currículo Lattes
+                Lattes Curriculum
             </a>
             <a href="https://github.com/davescordova" target="_blank" rel="noopener noreferrer" class="nav-link">
                 GitHub
             </a>
             <a href="{{ url_for('dissertation') }}" class="nav-link dissertation-link">
-                Dissertação de mestrado: DIVERGENT PATHS OF AGRICULTURAL ECONOMIC GROWTH IN IMMEDIATE REGIONS OF MATO GROSSO: THE IMPACT OF INSTITUTIONAL CHANGES SINCE THE MILITARY REGIME
+                Master's Dissertation: DIVERGENT PATHS OF AGRICULTURAL ECONOMIC GROWTH IN IMMEDIATE REGIONS OF MATO GROSSO: THE IMPACT OF INSTITUTIONAL CHANGES SINCE THE MILITARY REGIME
+            </a>
+            <a href="{{ url_for('articles') }}" class="nav-link">
+                Published Articles
             </a>
         </nav>
+
+        <!-- Contact Section -->
+        <div style="margin: 3.5rem auto 1rem; max-width: 450px; padding: 1.5rem; background-color: rgba(248, 249, 250, 0.7); border: 1px solid var(--border-color); border-radius: 12px; text-align: center; box-shadow: 0 4px 10px var(--shadow-color);">
+            <h3 style="margin-top: 0; color: var(--heading-color); font-size: 1.1rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">Contact</h3>
+            
+            <p style="margin-bottom: 8px; font-size: 0.95rem; color: var(--text-color);">
+                <strong>Email:</strong> 
+                <a href="mailto:daves.cordova@gmail.com" style="color: var(--primary-color); text-decoration: none; font-weight: 600; margin-left: 5px;">
+                    daves.cordova@gmail.com
+                </a>
+            </p>
+            
+            <p style="margin-bottom: 0; font-size: 0.95rem; color: var(--text-color);">
+                <strong>LinkedIn:</strong> 
+                <a href="https://www.linkedin.com/in/daves-cordova-64a432347" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: none; font-weight: 600; margin-left: 5px;">
+                    linkedin.com/in/daves-cordova-64a432347
+                </a>
+            </p>
+        </div>
 
     </div>
 
