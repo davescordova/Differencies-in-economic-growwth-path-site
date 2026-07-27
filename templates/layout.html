@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Crescimento Agrícola em Mato Grosso{% endblock %} - Daves de Azevedo Cordova</title>
+    <title>{% block title %}Academic Portfolio{% endblock %} - Daves de Azevedo Cordova</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -23,34 +23,27 @@
       };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
-
 </head>
 <body>
 
-    <!-- Header for the Dissertation -->
+    <!-- Header Section -->
     <header class="header">
-        <h1>DIVERGENT PATHS OF AGRICULTURAL ECONOMIC GROWTH IN IMMEDIATE REGIONS OF MATO GROSSO</h1>
-        <p>THE IMPACT OF INSTITUTIONAL CHANGES SINCE THE MILITARY REGIME</p>
+        {% block header %}
+            <h1>Daves de Azevedo Cordova</h1>
+            <p>Academic Portfolio & Research</p>
+        {% endblock %}
     </header>
 
-    <!-- Main Navigation Bar -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="{{ url_for('index') }}">Home</a>
-        <a href="{{ url_for('dissertation') }}">Welcome</a>
-        <a href="{{ url_for('introduction') }}">Introduction</a>
-        <a href="{{ url_for('theoretical_framework') }}">Theoretical Framework</a>
-        <a href="{{ url_for('institutional_changes') }}">Institutional Changes</a>
-        <a href="{{ url_for('outcomes_and_discussions') }}">Outcomes & Discussions</a>
-        <a href="{{ url_for('final_considerations') }}">Final Considerations</a>
-        <a href="{{ url_for('references') }}">References</a>
-        
-        <!-- Conditional Published Articles Link -->
-        {% if request.endpoint in ['index', 'dissertation'] %}
+        {% block navbar %}
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('dissertation') }}">Dissertation</a>
             <a href="{{ url_for('articles') }}">Published Articles</a>
-        {% endif %}
+        {% endblock %}
     </nav>
 
-    <!-- Main Content Area -->
+    <!-- Main Content Container -->
     <main class="container">
         <div class="content">
             {% block content %}{% endblock %}
@@ -59,9 +52,8 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026. Website generated from the thesis <i>DIVERGENT PATHS OF AGRICULTURAL ECONOMIC GROWTH IN IMMEDIATE REGIONS OF MATO GROSSO.</i></p>
+        <p>&copy; 2026 Daves de Azevedo Cordova. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
-

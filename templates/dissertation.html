@@ -1,5 +1,24 @@
 {% extends "layout.html" %}
-{% block title %}Welcome{% endblock %}
+
+{% block title %}Dissertation{% endblock %}
+
+{% block header %}
+    <h1>DIVERGENT PATHS OF AGRICULTURAL ECONOMIC GROWTH IN IMMEDIATE REGIONS OF MATO GROSSO</h1>
+    <p>THE IMPACT OF INSTITUTIONAL CHANGES SINCE THE MILITARY REGIME</p>
+{% endblock %}
+
+{% block navbar %}
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('dissertation') }}">Welcome</a>
+    <a href="{{ url_for('introduction') }}">Introduction</a>
+    <a href="{{ url_for('theoretical_framework') }}">Theoretical Framework</a>
+    <a href="{{ url_for('institutional_changes') }}">Institutional Changes</a>
+    <a href="{{ url_for('outcomes_and_discussions') }}">Outcomes & Discussions</a>
+    <a href="{{ url_for('final_considerations') }}">Final Considerations</a>
+    <a href="{{ url_for('references') }}">References</a>
+    <a href="{{ url_for('articles') }}">Published Articles</a>
+{% endblock %}
+
 {% block content %}
     <style>
         .download-btn {
@@ -7,7 +26,7 @@
             padding: 12px 24px;
             margin-top: 25px;
             margin-bottom: 15px;
-            background-color: #4CAF50; /* A nice green */
+            background-color: #4CAF50;
             color: white;
             text-align: center;
             text-decoration: none;
@@ -15,9 +34,9 @@
             font-size: 16px;
             font-weight: bold;
             transition: background-color 0.3s;
-            margin-right: 10px; /* Added for spacing between buttons */
+            margin-right: 10px;
         }
-         .download-btn:hover {
+        .download-btn:hover {
             background-color: #45a049;
         }
     </style>

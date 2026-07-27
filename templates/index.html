@@ -1,208 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daves de Azevedo Cordova - Economist</title>
-    <style>
-        /* --- GLOBAL VARIABLES (CSS VARIABLES) --- */
-        :root {
-            --primary-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            --serif-font: 'Source Serif Pro', 'Georgia', 'Times New Roman', Times, serif;
-            
-            --content-bg-color: #ffffff;
-            --text-color: #212529;
-            --heading-color: #002855;
-            --primary-color: #003366;
-            --accent-color: #f39c12;
-            --border-color: #dee2e6;
-            --shadow-color: rgba(0, 0, 0, 0.08);
-            --table-header-bg: #f2f2f2;
-        }
+{% extends "layout.html" %}
 
-        /* --- GENERAL & TYPOGRAPHY WITH BACKGROUND IMAGE --- */
-        body {
-            font-family: var(--primary-font);
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
+{% block title %}Home{% endblock %}
 
-            /* --- BACKGROUND IMAGE APPLIED --- */
-            background-image: url("{{ url_for('static', filename='images/image.png') }}");
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: var(--primary-font);
-            color: var(--heading-color);
-            font-weight: 700;
-        }
-        
-        /* --- MAIN CONTENT CONTAINER --- */
-        .container {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 2.5rem;
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            box-shadow: 0 6px 20px var(--shadow-color);
-        }
-
-        /* --- HEADER --- */
-        header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        header h1 {
-            font-size: 2.8rem;
-        }
-        
-        /* --- ABOUT SECTION --- */
-        main h2 {
-            font-size: 1.8rem;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        main p {
-            font-size: 1.1rem;
-            text-align: justify;
-            margin-bottom: 1rem;
-        }
-
-        /* --- NAVIGATION BUTTONS --- */
-        nav {
-            text-align: center;
-            padding-top: 1.5rem;
-        }
-        
-        .nav-link {
-            background-color: var(--primary-color);
-            color: #ffffff;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 8px;
-            margin: 0.5rem;
-            display: inline-block;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 10px var(--shadow-color);
-            font-weight: 600;
-        }
-
-        .nav-link:hover {
-            background-color: var(--accent-color);
-            color: var(--heading-color);
-            transform: translateY(-3px);
-        }
-
-        .dissertation-link {
-            display: block;
-            width: 80%;
-            margin: 1rem auto 0;
-            text-align: center;
-            background-color: #f8f9fa;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .dissertation-link:hover {
-            background-color: var(--primary-color);
-            color: #ffffff;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 2rem auto;
-                padding: 1.5rem;
-            }
-            .nav-link, .dissertation-link {
-                width: 90%;
-                padding: 1rem;
-            }
-            header h1 {
-                font-size: 2.2rem;
-            }
-            main h2 {
-                font-size: 1.5rem;
-            }
-            main p {
-                font-size: 1rem;
-            }
-        }
-    </style>
-
+{% block content %}
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMDP3WK4NR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-BMDP3WK4NR');
     </script>
-</head>
-<body>
 
-    <div class="container">
+    <h2>About Me</h2>
+    
+    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-color); margin-bottom: 1.25rem;">
+        With a multidisciplinary academic and professional background, I am a public sector economics specialist driven by the challenge of promoting efficiency, economic growth, and transparency in public governance. I hold a Master's degree in Economics from the Federal University of Mato Grosso (UFMT), a Bachelor's degree in Economic Sciences (UFMT), and a Bachelor's degree in History from São Paulo State University (Unesp).
+    </p>
 
-        <header>
-            <h1>Daves de Azevedo Cordova</h1>
-        </header>
+    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-color); margin-bottom: 1.25rem;">
+        Currently, I serve as an External Public Auditor at the Court of Accounts of Mato Grosso (TCE-MT), on temporary assignment to the Regional Electoral Court (TRE-MT). In this role, I apply technical expertise to complex audits and electoral account analyses, ensuring compliance and the optimal allocation of public resources.
+    </p>
 
-        <main>
-            <h2>About</h2>
-            <p>
-                With a multidisciplinary academic and professional background, I am a public sector economics specialist driven by the challenge of promoting efficiency and transparency in public governance. I hold a Master's degree in Economics from UFMT, a Bachelor's degree in Economic Sciences (UFMT), and a solid humanistic foundation from my first Bachelor's degree in History (Unesp).
-            </p>
-            <p>
-                Currently, I work as an External Public Auditor at the Court of Accounts of Mato Grosso (TCE-MT), on temporary assignment to the Regional Electoral Court (TRE-MT). In this role, I apply my technical expertise to complex audits and electoral account analyses, ensuring compliance and the proper allocation of public resources.
-            </p>
-            <p>
-                Data analysis led me to develop advanced skills in quantitative and econometric tools, utilizing programming languages such as Python and Julia to model and interpret economic scenarios, with a special focus on economic growth, development, and public finance.
-            </p>
-        </main>
+    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-color); margin-bottom: 2rem;">
+        My work extensively relies on quantitative methods and spatial econometrics, utilizing programming languages such as Python and Julia to model economic scenarios, analyze regional development, and evaluate public policies.
+    </p>
 
-        <nav>
-            <a href="https://lattes.cnpq.br/2785354956856869" target="_blank" rel="noopener noreferrer" class="nav-link">
-                Lattes Curriculum
-            </a>
-            <a href="https://github.com/davescordova" target="_blank" rel="noopener noreferrer" class="nav-link">
-                GitHub
-            </a>
-            <a href="{{ url_for('dissertation') }}" class="nav-link dissertation-link">
-                Master's Dissertation: DIVERGENT PATHS OF AGRICULTURAL ECONOMIC GROWTH IN IMMEDIATE REGIONS OF MATO GROSSO: THE IMPACT OF INSTITUTIONAL CHANGES SINCE THE MILITARY REGIME
-            </a>
-            <a href="{{ url_for('articles') }}" class="nav-link">
-                Published Articles
-            </a>
-        </nav>
+    <!-- Interactive Navigation Cards -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2.5rem 0;">
+        
+        <!-- Dissertation Card -->
+        <div style="background-color: var(--bg-light); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h3 style="color: var(--heading-color); margin-bottom: 0.75rem; font-size: 1.15rem;">Master's Dissertation</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    Divergent Paths of Agricultural Economic Growth in Immediate Regions of Mato Grosso: The Impact of Institutional Changes Since the Military Regime.
+                </p>
+            </div>
+            <a href="{{ url_for('dissertation') }}" class="btn-primary" style="margin-top: 0; align-self: start;">Explore Dissertation</a>
+        </div>
 
-        <!-- Contact Section -->
-        <div style="margin: 3.5rem auto 1rem; max-width: 450px; padding: 1.5rem; background-color: rgba(248, 249, 250, 0.7); border: 1px solid var(--border-color); border-radius: 12px; text-align: center; box-shadow: 0 4px 10px var(--shadow-color);">
-            <h3 style="margin-top: 0; color: var(--heading-color); font-size: 1.1rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">Contact</h3>
-            
-            <p style="margin-bottom: 8px; font-size: 0.95rem; color: var(--text-color);">
-                <strong>Email:</strong> 
-                <a href="mailto:daves.cordova@gmail.com" style="color: var(--primary-color); text-decoration: none; font-weight: 600; margin-left: 5px;">
-                    daves.cordova@gmail.com
-                </a>
-            </p>
-            
-            <p style="margin-bottom: 0; font-size: 0.95rem; color: var(--text-color);">
-                <strong>LinkedIn:</strong> 
-                <a href="https://www.linkedin.com/in/daves-cordova-64a432347" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: none; font-weight: 600; margin-left: 5px;">
-                    linkedin.com/in/daves-cordova-64a432347
-                </a>
-            </p>
+        <!-- Published Articles Card -->
+        <div style="background-color: var(--bg-light); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h3 style="color: var(--heading-color); margin-bottom: 0.75rem; font-size: 1.15rem;">Published Articles</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    Browse peer-reviewed research covering institutional dynamics, land markets, transport infrastructure, and spatial models.
+                </p>
+            </div>
+            <a href="{{ url_for('articles') }}" class="btn-secondary" style="margin-top: 0; align-self: start;">View Publications</a>
+        </div>
+
+        <!-- Lattes Card -->
+        <div style="background-color: var(--bg-light); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h3 style="color: var(--heading-color); margin-bottom: 0.75rem; font-size: 1.15rem;">Lattes Curriculum</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    Access my official academic CV registered on the CNPq Lattes platform.
+                </p>
+            </div>
+            <a href="https://lattes.cnpq.br/2785354956856869" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top: 0; align-self: start;">Open Lattes CV</a>
+        </div>
+
+        <!-- GitHub Card -->
+        <div style="background-color: var(--bg-light); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h3 style="color: var(--heading-color); margin-bottom: 0.75rem; font-size: 1.15rem;">GitHub Repository</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    Explore source code, econometric models, and replication scripts for my research projects.
+                </p>
+            </div>
+            <a href="https://github.com/davescordova" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top: 0; align-self: start;">Visit GitHub</a>
         </div>
 
     </div>
 
-</body>
-</html>
+    <!-- Contact Section -->
+    <div style="margin-top: 3rem; padding: 1.75rem; background-color: var(--bg-light); border: 1px solid var(--border-color); border-radius: 10px; text-align: center;">
+        <h3 style="margin-top: 0; color: var(--heading-color); font-size: 1.1rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">Contact & Networking</h3>
+        
+        <p style="margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-color);">
+            <strong>Email:</strong> 
+            <a href="mailto:daves.cordova@gmail.com" style="color: var(--accent-color); text-decoration: none; font-weight: 600; margin-left: 5px;">
+                daves.cordova@gmail.com
+            </a>
+        </p>
+        
+        <p style="margin-bottom: 0; font-size: 0.95rem; color: var(--text-color);">
+            <strong>LinkedIn:</strong> 
+            <a href="https://www.linkedin.com/in/daves-cordova-64a432347" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); text-decoration: none; font-weight: 600; margin-left: 5px;">
+                linkedin.com/in/daves-cordova-64a432347
+            </a>
+        </p>
+    </div>
+{% endblock %}

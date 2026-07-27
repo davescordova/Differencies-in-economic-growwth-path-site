@@ -1,8 +1,22 @@
-# Note: All lines related to Flask-Frozen have been removed.
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 # Initialize the Flask application
-app = Flask(__name__)
+app = Flask(__name__, static_folder=None)
+
+# --- DEVELOPMENT CONFIGURATIONS ---
+# Force templates to automatically reload when you save them in VS Code
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
+# Disable caching for static files (CSS, Images, etc.) so the browser always fetches the newest version
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
+# --- IN-MEMORY CSS CACHE ---
+# style.css is read once into memory here, at startup, instead of being
+# re-read from the FUSE-mounted Google Drive folder on every request.
+# This avoids the flaky/partial reads that were causing ERR_CONTENT_LENGTH_MISMATCH.
+# NOTE: if you edit static/style.css, restart the server to pick up the change.
+with open('static/style.css', 'rb') as f:
+    STYLE_CSS = f.read()
 
 # --- MAIN ROUTES ---
 
@@ -94,8 +108,24 @@ def references():
 def final_considerations():
     return render_template('final_considerations.html')
 
+# --- STATIC FILE ROUTES ---
+
+# style.css is served from memory (see STYLE_CSS above) to avoid FUSE read issues.
+# This specific route takes precedence over the generic one below for this exact path.
+@app.route('/static/style.css', endpoint='static_style')
+def static_style():
+    return STYLE_CSS, 200, {'Content-Type': 'text/css'}
+
+# All other static files (images, pdfs, etc.) are still served normally from disk,
+# with conditional=False to avoid range-request (206) handling on the FUSE mount.
+# endpoint='static' preserves url_for('static', filename=...) working exactly as before.
+@app.route('/static/<path:filename>', endpoint='static')
+def static_files(filename):
+    return send_from_directory('static', filename, conditional=False)
+
 
 # This section is good practice to keep for local development.
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    # reloader_type='stat' uses polling instead of inotify, which is more
+    # reliable when the project lives on a FUSE-mounted filesystem (Google Drive)
+    app.run(debug=True, reloader_type='stat')
